@@ -15,4 +15,5 @@ firsttest.html was our basic framework of the website.
 
 1.project1.html is the main file of the WaetherU webpage 
 2.home.html is the main page of the website.
+3.bonus.html is the webpage where you can calculate average temperature of four cities of same country.
 
