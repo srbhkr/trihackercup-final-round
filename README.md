@@ -1,37 +1,18 @@
-## Welcome to GitHub Pages
+WeatherU
 
-You can use the [editor on GitHub](https://github.com/srbhkr/trihackercup-final-round/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+It is a blog where you can add details about your cities.
+To go to the weather API page click on the "WeatherU" and you will redirected to the "theUchihas Weather Forecast" page.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+theUchihas Weather Forecast
 
-### Markdown
+Enter the city name and the country name and you will get the temperature of the given city.
+e.g.
+enter city name = allahabad or delhi
+enter country name = india
+There is also a weather widget where you can get the maximum and minimum of five days, wind speed and other details.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+firsttest.html was our basic framework of the website.
 
-```markdown
-Syntax highlighted code block
+1.project1.html is the main file of the WaetherU webpage 
+2.home.html is the main page of the website.
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/srbhkr/trihackercup-final-round/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
