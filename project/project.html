@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+<title> weather website</title>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+
+</style>
+</head>
+
+
+  <div class="container">
+  <div class="jumbotron">
+    <h1>The Uchihas Weather Forcast</h1>
+    <p>We will tell u all about weather with perfection ! trust Us </p>
+  </div>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+<br>
+ 
+
+
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<br>
+<div id="cent" class="container">
+
+  <form action="welome.php" method="post">
+
+  <div class="form-group">
+    <label for="Country">Country</label>
+    <input type="text" name="country" class="form-control" id="Text">
+  </div>
+  <div class="form-group">
+    <label for="City">City</label>
+    <input type="text" name="city" class="form-control" id="Text">
+  </div>
+
+    <input type="submit" class="btn btn-info" value="Submit" onclick = "return callme();">
+  </form>
+</div>
+</body>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script>
+
+function callme() {
+var coutryname = $("input[name*='country']" ).val();
+var cityname = $("input[name*='city']" ).val();
+
+  $.ajax({
+  url : "http://api.wunderground.com/api/c1803f807f2a05f1/geolookup/conditions/q/" + coutryname + "/" + cityname + ".json",
+  dataType : "jsonp",
+  success : function(parsed_json) {
+  var location = parsed_json['location']['city'];
+  var temp_f = parsed_json['current_observation']['temp_c'];
+  alert("Current temperature in " + location + " is: " + temp_f);
+  }
+  });
+return false;
+}
+</script>
+
+</html>
+
