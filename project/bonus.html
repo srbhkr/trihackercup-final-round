@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+<title> weather website</title>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+
+</style>
+</head>
+<nav class="navbar navbar-inverse">
+<div class="container-fluid">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="project.html">Weather<b>U</b></a>
+  </div>
+  <ul class="nav navbar-nav">
+    <li class=""><a href="home.html">Home</a></li>
+    <li><a href="#">More info</a></li>
+    <li><a href="#">News</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+</div>
+</nav>
+
+  <div class="container">
+  <div class="jumbotron">
+    <h1>The Uchihas Weather Forcast</h1>
+    <p>We will tell u all about weather with perfection ! trust Us </p>
+  </div>
+  <table>
+    <th width="100%">
+        <span id="cent" class="container">
+
+  <form action="welcome.php" method="post">
+
+  <div class="form-group">
+    <label for="Country">Country</label>
+    <input type="text" name="country" class="form-control" id="Text">
+  </div>
+  <div class="form-group">
+    <label for="City1">City</label>
+    <input type="text" name="city1" class="form-control" id="Text">
+  </div>
+  <div class="form-group">
+    <label for="City2">City</label>
+    <input type="text" name="city2" class="form-control" id="Text">
+   
+  </div>
+  <div class="form-group">
+    <label for="City3">City</label>
+    <input type="text" name="city3" class="form-control" id="Text">
+  </div>
+  <div class="form-group">
+    <label for="City4">City</label>
+    <input type="text" name="city4" class="form-control" id="Text">
+  </div>
+
+    <input type="submit" class="btn btn-info" value="Submit" onclick = "return callme();">
+  </form>
+</span>
+    </th>
+    <th>
+       <div style="width: 475px; background-color: #fff;">
+    <iframe style="overflow:hidden;border:none" allowtransparency="true" width="475" height="200" src="http://www.weather-forecast.com/locations/allahabad/forecasts/latest/threedayfree" scrolling="no" frameborder="0" marginwidth="0" marginheight="0">
+    </iframe> </div>
+    </th>
+  </table>
+
+
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+  </ol>
+
+ 
+
+<br>
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="image1.jpg" alt="5360-8">
+    </div>
+
+    <div class="item">
+      <img src="image2.jpg" alt="2313-10">
+    </div>
+
+    <div class="item">
+      <img src="image3.jpg" alt="11447-8">
+    </div>
+  </div>
+
+
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<br>
+  <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+  <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">Previous</button>
+  <button class="w3-button w3-black w3-padding-large w3-margin-bottom">Next »</button>
+  <p>Powered by <b>Weather<b>U</b></b></p>
+</footer>
+
+</body>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script>
+
+function callme() {
+var coutryname = $("input[name*='country']" ).val();
+var cityname1 = $("input[name*='city1']" ).val();
+
+  $.ajax({
+  url : "http://api.wunderground.com/api/c1803f807f2a05f1/geolookup/conditions/q/" + coutryname + "/" + cityname1 + ".json",
+  dataType : "jsonp",
+  success : function(parsed_json) {
+  var location = parsed_json['location']['city'];
+  var temp_f1 = parsed_json['current_observation']['temp_c'];
+  alert("Average temperature is: " + temp_f1);
+
+  }
+  });
+return false;
+}
+</script>
+</html>
+
